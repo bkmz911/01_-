@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алгоритмы — учебный проект</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">УЧЕБНАЯ ЛАБА // ВЕБ-ПРОЕКТ</span>
+        <h1>АЛГОРИТМЫ // ПРАКТИКА</h1>
+        <p>Базовые операции, ввод и вывод данных, работа со списком.</p>
+      </div>
+      <div class="status-box">
+        <span class="status-dot"></span>
+        СИСТЕМА ЗАПУЩЕНА
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel calc-panel">
+        <div class="panel-head">
+          <span class="panel-index">01</span>
+          <div>
+            <h2>КАЛЬКУЛЯТОР</h2>
+            <p>Два аргумента → выбранная операция → результат.</p>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="leftNumber">АРГУМЕНТ А</label>
+            <input id="leftNumber" type="number" inputmode="decimal" placeholder="5">
+          </div>
+          <div class="field">
+            <label for="rightNumber">АРГУМЕНТ Б</label>
+            <input id="rightNumber" type="number" inputmode="decimal" placeholder="6">
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-main" type="button" data-calc="sum">СЛОЖИТЬ +</button>
+          <button class="btn btn-alt" type="button" data-calc="difference">ВЫЧЕСТЬ −</button>
+        </div>
+
+        <output id="mathOutput" class="terminal-output">ГОТОВ К РАБОТЕ_</output>
+      </section>
+
+      <section class="panel roster-panel">
+        <div class="panel-head">
+          <span class="panel-index">02</span>
+          <div>
+            <h2>СПИСОК ИМЁН</h2>
+            <p>Добавление, удаление, очистка и защита от дублей.</p>
+          </div>
+        </div>
+
+        <div class="input-stack">
+          <div class="field">
+            <label for="personName">НОВОЕ ИМЯ</label>
+            <input id="personName" type="text" autocomplete="off" placeholder="Например:  инноКЕнТиЙ ">
+          </div>
+
+          <div class="action-row split-actions">
+            <button id="insertPerson" class="btn btn-main" type="button">ДОБАВИТЬ В СПИСОК</button>
+            <button id="scanPerson" class="btn btn-alt" type="button">ПРОВЕРИТЬ СИМВОЛЫ</button>
+            <button id="rollback" class="btn btn-flat" type="button">ОТМЕНИТЬ</button>
+          </div>
+        </div>
+
+        <div class="list-meta">
+          <span>Клик — выбрать</span>
+          <span>↑ ↓ — навигация</span>
+          <span>Ctrl+Z — отмена</span>
+        </div>
+
+        <div id="roster" class="roster" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="symbolDialog" class="dialog-box">
+    <form method="dialog">
+      <span class="dialog-mark">!</span>
+      <h3>ЛИШНИЕ СИМВОЛЫ</h3>
+      <p>В строке есть цифры или посторонние знаки. Очистить их?</p>
+      <div class="action-row dialog-actions">
+        <button id="removeGarbage" class="btn btn-main" value="clean">ОЧИСТИТЬ</button>
+        <button class="btn btn-flat" value="keep">ОСТАВИТЬ</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
